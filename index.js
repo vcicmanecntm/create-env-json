@@ -9,6 +9,8 @@ const fullPath = path.join(process.env.GITHUB_WORKSPACE, fileName);
 var obj = {};
 
 Object.keys(process.env).forEach(function(key) {
+  console.log('key: ',key)
+  console.log('value: ', process.env[key])
   if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
     obj[key.substring(inputPrefix.length)] = process.env[key];
   }
